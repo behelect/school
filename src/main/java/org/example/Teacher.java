@@ -1,16 +1,6 @@
 package org.example;
 public class Teacher {
     private String firstName;
-    private String lastName;
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getFirstName() {
         return firstName;
     }
