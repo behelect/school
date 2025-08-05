@@ -19,5 +19,4 @@ public class Teacher {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
 }
