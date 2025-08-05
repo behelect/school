@@ -1,22 +1,18 @@
-package org.example;
-
-import java.util.Date;
+package org.example.model;
 
 public class Student {
     private String firstName;
     private String lastName;
     private int age;
-    private Date dateOfBirth;
 
-    public Student()
-    {
+    public Student() {
+        // Default constructor
     }
 
-    public Student(String firstName, String lastName, int age, Date dateOfBirth) {
+    public Student(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFirstName() {
@@ -41,13 +37,5 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
 }
