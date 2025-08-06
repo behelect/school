@@ -7,6 +7,7 @@ public class Screen {
         System.out.println("1. Add Student");
         System.out.println("2. Add Teacher");
         System.out.println("3. Add Lesson");
+        System.out.println("4. All Info");
         System.out.println("-------------------");
     }
 }

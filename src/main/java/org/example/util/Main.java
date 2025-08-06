@@ -2,6 +2,11 @@ package org.example.util;
 
 import java.util.Scanner;
 
+import static org.example.util.ScreenLesson.printLessonInfo;
+import static org.example.util.ScreenStudent.printStudentInfo;
+import static org.example.util.ScreenTeacher.printTeacherInfo;
+
+
 public class Main {
     public static void main(String[] args) {
         while (true) {
@@ -16,6 +21,11 @@ public class Main {
                     break;
                 case 3:
                     ScreenLesson.registerLesson();
+                    break;
+                case 4:
+                    printStudentInfo();
+                    printLessonInfo();
+                    printTeacherInfo();
                     break;
             }
         }

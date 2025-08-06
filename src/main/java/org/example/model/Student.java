@@ -1,17 +1,16 @@
 package org.example.model;
 
+import java.time.LocalDate;
+
 public class Student {
     private String firstName;
     private String lastName;
-    private String dateOfBirth;
-    private int age;
+    private LocalDate birthDate;
 
-
-    public Student(String firstName, String lastName, int age, String dateOfBirth) {
+    public Student(String firstName, String lastName, LocalDate birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.age = age;
+        this.birthDate = birthDate;
     }
 
     public String getFirstName() {
@@ -30,20 +29,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
 }

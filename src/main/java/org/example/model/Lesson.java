@@ -2,9 +2,9 @@ package org.example.model;
 
 public class Lesson {
     private String bookName;
-    private int bookCode;
+    private String bookCode;
 
-    public Lesson(String bookName, int bookCode) {
+    public Lesson(String bookName, String bookCode) {
         this.bookName = bookName;
         this.bookCode = bookCode;
     }
@@ -17,11 +17,11 @@ public class Lesson {
         this.bookName = bookName;
     }
 
-    public int getBookCode() {
+    public String getBookCode() {
         return bookCode;
     }
 
-    public void setBookCode(int bookCode) {
+    public void setBookCode(String bookCode) {
         this.bookCode = bookCode;
     }
 }
