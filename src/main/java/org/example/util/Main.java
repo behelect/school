@@ -1,4 +1,4 @@
-package org.example;
+package org.example.util;
 
 import java.util.Scanner;
 
@@ -11,9 +11,11 @@ public class Main {
                 case 1:
                     ScreenStudent.registerStudent();
                     break;
-                case 2:ScreenTeacher.registerTeacher();
+                case 2:
+                    ScreenTeacher.registerTeacher();
                     break;
-                case 3:ScreenLesson.registerLesson();
+                case 3:
+                    ScreenLesson.registerLesson();
                     break;
             }
         }

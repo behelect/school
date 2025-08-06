@@ -1,6 +1,7 @@
-package org.example;
+package org.example.util;
 
 import org.example.model.Student;
+
 import java.util.Scanner;
 
 public class ScreenStudent {
@@ -13,7 +14,6 @@ public class ScreenStudent {
 
         System.out.print("Enter Last Name: ");
         String lastName = scanner.nextLine();
-
         int age;
         while (true) {
             System.out.print("Enter Age: ");
@@ -26,12 +26,16 @@ public class ScreenStudent {
             }
         }
 
-        Student student = new Student(firstName, lastName, age);
+        System.out.print("Enter Date Of Birth(yyyy-MM-dd): ");
+        String birthDey = scanner.nextLine();
+
+        Student student = new Student(firstName, lastName, age, birthDey);
 
         System.out.println("----- Student Info -----");
         System.out.println("First Name: " + student.getFirstName());
         System.out.println("Last Name: " + student.getLastName());
         System.out.println("Age: " + student.getAge());
+        System.out.println("DateOfBirth: " + student.getDateOfBirth());
         System.out.println("------------------------");
     }
 }
