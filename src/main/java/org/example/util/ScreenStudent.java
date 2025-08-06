@@ -29,13 +29,13 @@ public class ScreenStudent {
         System.out.print("Enter Date Of Birth(yyyy-MM-dd): ");
         String birthDey = scanner.nextLine();
 
-        Student student = new Student(firstName, lastName, age, birthDey);
+        Student student = new Student(firstName, lastName, birthDey);
 
         System.out.println("----- Student Info -----");
         System.out.println("First Name: " + student.getFirstName());
         System.out.println("Last Name: " + student.getLastName());
-        System.out.println("Age: " + student.getAge());
         System.out.println("DateOfBirth: " + student.getDateOfBirth());
+        System.out.println("Age: " + student.getAge());
         System.out.println("------------------------");
     }
 }

@@ -14,11 +14,11 @@ public class ScreenTeacher {
         String lastName = scanner.nextLine();
 
         System.out.print("Enter Code: ");
-        int code;
+        String code;
         while (true) {
             String input = scanner.nextLine();
             try {
-                code = Integer.parseInt(input);
+                code = input;
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Just enter the number!");

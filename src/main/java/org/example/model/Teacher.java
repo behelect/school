@@ -3,9 +3,9 @@ package org.example.model;
 public class Teacher {
     private String firstName;
     private String lastName;
-    private int code;
+    private String code;
 
-    public Teacher(String firstName, String lastName, int code) {
+    public Teacher(String firstName, String lastName, String code) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.code = code;
@@ -25,10 +25,10 @@ public class Teacher {
         this.lastName = lastName;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 }

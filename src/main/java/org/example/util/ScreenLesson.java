@@ -1,6 +1,7 @@
 package org.example.util;
 
 import org.example.model.Lesson;
+
 import java.util.Scanner;
 
 public class ScreenLesson {
@@ -11,12 +12,12 @@ public class ScreenLesson {
         System.out.print("Enter Book Name: ");
         String bookName = scanner.nextLine();
 
-        int bookCode;
+        String bookCode;
         while (true) {
             System.out.print("Enter Book Code: ");
             String userInput = scanner.nextLine();
             try {
-                bookCode = Integer.parseInt(userInput);
+                bookCode = userInput;
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Just enter a number!");
