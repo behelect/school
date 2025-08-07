@@ -1,16 +1,16 @@
 package org.example.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Student {
     private String firstName;
     private String lastName;
-    private LocalDate birthDate;
+    private Date birthDate;
 
-    public Student(String firstName, String lastName, LocalDate birthDate) {
+    public Student(String firstName, String lastName, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthDate = birthDate;
+        this.birthDate = dateOfBirth;
     }
 
     public String getFirstName() {
@@ -29,11 +29,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public LocalDate getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 }
