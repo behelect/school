@@ -1,39 +1,28 @@
 package org.example.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class Student {
     private String firstName;
     private String lastName;
-    private Date birthDate;
+    private LocalDate dateOfBirth;
 
-    public Student(String firstName, String lastName, Date dateOfBirth) {
+    public Student(String firstName, String lastName, String birthDateStr) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthDate = dateOfBirth;
+        this.dateOfBirth = LocalDate.parse(birthDateStr);
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public int getAge() {
+        return Period.between(dateOfBirth, LocalDate.now()).getYears();
     }
 }

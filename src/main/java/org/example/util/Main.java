@@ -2,17 +2,13 @@ package org.example.util;
 
 import java.util.Scanner;
 
-import static org.example.util.ScreenLesson.printLessonInfo;
-import static org.example.util.ScreenStudent.printStudentInfo;
-import static org.example.util.ScreenTeacher.printTeacherInfo;
-
-
 public class Main {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         while (true) {
             Screen.show();
-            Scanner input = new Scanner(System.in);
-            switch (input.nextInt()) {
+            int choice = input.nextInt();
+            switch (choice) {
                 case 1:
                     ScreenStudent.registerStudent();
                     break;
@@ -23,10 +19,12 @@ public class Main {
                     ScreenLesson.registerLesson();
                     break;
                 case 4:
-                    printStudentInfo();
-                    printLessonInfo();
-                    printTeacherInfo();
+                    Screen.showAllStudents();
+                    Screen.showAllLesson();
+                    Screen.showAllTeacher();
                     break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
             }
         }
     }
