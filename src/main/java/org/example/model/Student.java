@@ -1,9 +1,9 @@
 package org.example.model;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Student {
+public class Student implements Serializable {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
@@ -24,5 +24,9 @@ public class Student {
 
     public int getAge() {
         return Period.between(dateOfBirth, LocalDate.now()).getYears();
+    }
+
+    public String toString() {
+        return "First Name: " + firstName + "\nLast Name: " + lastName + "\nDate Of Birth: " + dateOfBirth;
     }
 }

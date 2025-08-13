@@ -1,6 +1,7 @@
 package org.example.model;
+import java.io.Serializable;
 
-public class Teacher {
+public class Teacher implements Serializable {
     private String firstName;
     private String lastName;
     private String teacherCode;
@@ -21,5 +22,8 @@ public class Teacher {
 
     public String getTeacherCode() {
         return teacherCode;
+    }
+    public String toString() {
+        return "First Name: " + firstName + "\nLast Name: " + lastName + "\nTeacher Code: " + teacherCode;
     }
 }

@@ -1,19 +1,23 @@
 package org.example.model;
 
-public class Lesson {
-    private static String bookName;
+import java.io.Serializable;
+
+public class Lesson implements Serializable {
+    private String bookName;
     private String bookCode;
 
     public Lesson(String bookName, String bookCode) {
-        Lesson.bookName = bookName;
+        this.bookName = bookName;
         this.bookCode = bookCode;
     }
 
-    public static String getBookName() {
+    public String getBookName() {
         return bookName;
     }
-
     public String getBookCode() {
         return bookCode;
+    }
+    public String toString() {
+        return "BookName: " + bookName + "\nBookCode: " + bookCode;
     }
 }
