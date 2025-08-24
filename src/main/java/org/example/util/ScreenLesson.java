@@ -1,17 +1,12 @@
 package org.example.util;
-
 import org.example.model.Lesson;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static org.example.util.Screen.showAllLesson;
-
 public class ScreenLesson {
     private static final String FILE_NAME = "lessons.ser";
     static ArrayList<Lesson> lessons = loadLessonsFromFile();
-
     public static void registerLesson() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -30,9 +25,7 @@ public class ScreenLesson {
             }
             Lesson lesson = new Lesson(bookName, bookCode);
             lessons.add(lesson);
-
             saveLessonsToFile();
-
             Screen.info();
             int enter = scanner.nextInt();
             scanner.nextLine();
@@ -48,11 +41,9 @@ public class ScreenLesson {
             }
         }
     }
-
     public static ArrayList<Lesson> getLessons() {
         return lessons;
     }
-
     static void saveLessonsToFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(lessons);
@@ -60,7 +51,6 @@ public class ScreenLesson {
             e.printStackTrace();
         }
     }
-
     private static ArrayList<Lesson> loadLessonsFromFile() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             return (ArrayList<Lesson>) ois.readObject();

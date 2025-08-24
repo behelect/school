@@ -6,12 +6,14 @@ import java.time.Period;
 public class Student implements Serializable {
     private String firstName;
     private String lastName;
-    private LocalDate dateOfBirth;
+    private static LocalDate dateOfBirth;
+    private int age;
 
-    public Student(String firstName, String lastName, String birthDateStr) {
+    public Student(String firstName, String lastName, String birthDateStr, String age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = LocalDate.parse(birthDateStr);
+        this.age = Period.between(dateOfBirth, LocalDate.now()).getYears();
     }
 
     public String getFirstName() {
@@ -22,11 +24,11 @@ public class Student implements Serializable {
         return lastName;
     }
 
-    public int getAge() {
+    public static int getAge() {
         return Period.between(dateOfBirth, LocalDate.now()).getYears();
-    }
 
+    }
     public String toString() {
-        return "First Name: " + firstName + "\nLast Name: " + lastName + "\nDate Of Birth: " + dateOfBirth;
+        return "First Name: " + firstName + "\nLast Name: " + lastName + "\nDate Of Birth: " + dateOfBirth+"\nAge:"+age;
     }
 }

@@ -1,6 +1,5 @@
 package org.example.util;
 import java.io.*;
-
 import org.example.model.Teacher;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -28,11 +27,8 @@ public class ScreenTeacher {
             }
             Teacher teacher = new Teacher(firstName, lastName,code);
             teachers.add(teacher);
-
             saveTeacherToFile();
-
             Screen.info();
-
             int enter = scanner.nextInt();
             scanner.nextLine();
             if (enter == 1) {
@@ -55,7 +51,6 @@ public class ScreenTeacher {
             e.printStackTrace();
         }
     }
-
     private static ArrayList<Teacher> loadTeacherFromFile() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             return (ArrayList<Teacher>) ois.readObject();
