@@ -1,5 +1,8 @@
 package org.example.util;
 
+import org.example.ui.MainForm;
+import org.example.ui.StudentForm;
+
 import java.util.Scanner;
 
 import static org.example.util.ScreenLesson.lessons;
@@ -11,6 +14,9 @@ import static org.example.util.ScreenTeacher.teachers;
 
 public class Main {
     public static void main(String[] args) {
+        MainForm mainForm= new MainForm();
+        mainForm.createAndShowGUI();
+        //
         Scanner input = new Scanner(System.in);
         Screen.showAllInformation();
         while (true) {
