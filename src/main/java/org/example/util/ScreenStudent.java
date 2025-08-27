@@ -1,17 +1,12 @@
 package org.example.util;
-
 import org.example.model.Student;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static org.example.util.Screen.showAllStudents;
-
 public class ScreenStudent {
     private static final String FILE_NAME = "student.ser";
     static ArrayList<Student> students = loadStudentFromFile();
-
     public static void registerStudent() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -21,11 +16,10 @@ public class ScreenStudent {
             String lastName = scanner.nextLine();
             System.out.print("Enter Date of Birth (yyyy-MM-dd): ");
             String birthDate = scanner.nextLine();
-            Student student = new Student(firstName, lastName,birthDate);
+            String birthDate1 = birthDate;
+            Student student = new Student(firstName, lastName,birthDate,birthDate1);
             students.add(student);
-
             saveStudentToFile();
-
             Screen.info();
             int enter = scanner.nextInt();
             scanner.nextLine();
@@ -42,7 +36,6 @@ public class ScreenStudent {
     public static ArrayList<Student> getStudents() {
         return students;
     }
-
     static void saveStudentToFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(students);
@@ -50,7 +43,6 @@ public class ScreenStudent {
             e.printStackTrace();
         }
     }
-
     private static ArrayList<Student> loadStudentFromFile() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             return (ArrayList<Student>) ois.readObject();
